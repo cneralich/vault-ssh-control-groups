@@ -101,7 +101,7 @@ vault login -method=userpass username="bob" password="training"
 
 # Run command to sign bob's key 
 # NOTE: Keep track of wrapping_token and wrapping_accessor
-vault write ssh-client-signer-team-1/sign/bob public_key=@$HOME/.ssh/id_rsa.pub
+vault write -field=signed_key ssh-client-signer-team-1/sign/bob public_key=@$HOME/.ssh/id_rsa.pub > signed-cert.pub
 
 # Login as ellen
 vault login -method=userpass username="ellen" password="training"
